@@ -1209,6 +1209,7 @@ xfreerdp /v:<RHOST> /u:<USERNAME> /p:<PASSWORD> /d:<DOMAIN> /cert-ignore
 xfreerdp /v:<RHOST> /u:<USERNAME> /p:<PASSWORD> /dynamic-resolution +clipboard
 xfreerdp /v:<RHOST> /u:<USERNAME> /d:<DOMAIN> /pth:'<HASH>' /dynamic-resolution +clipboard
 xfreerdp /v:<RHOST> /dynamic-resolution +clipboard /tls-seclevel:0 -sec-nla
+xfreerdp /v:<RHOST> /u:<USERNAME> /d:<DOMAIN> /port:<PORT> /w:1280 /h:720 /drive:my_share,/home/kali/shared
 rdesktop <RHOST>
 ```
 
