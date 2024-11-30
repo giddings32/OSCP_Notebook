@@ -2450,9 +2450,9 @@ impacket-mssqlclient <USERNAME>:<PASSWORD>@<RHOST> -windows-auth
 
 ```c
 SELECT @@version;
-SELECT name FROM sys.databases;
-SELECT * FROM <DATABASE>.information_schema.tables;
-SELECT * FROM <DATABASE>.dbo.users;
+SELECT name FROM sys.databases;                       <---- List all available Databases
+SELECT * FROM <DATABASE>.information_schema.tables;   <---- List tables in selected database
+SELECT * FROM <DATABASE>.dbo.<TableName>;             <---- View contents of selected table within selected Database
 ```
 
 ##### Show Database Content
