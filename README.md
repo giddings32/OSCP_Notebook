@@ -2533,7 +2533,7 @@ SQL> xp_cmdshell whoami
 
 ```c
 mysql -u root -p
-mysql -u <USERNAME> -h <RHOST> -P <PORT> -p
+mysql -u <USERNAME> -h <RHOST> -P <PORT> -p --skip-ssl
 ```
 
 ```c
