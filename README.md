@@ -2665,7 +2665,9 @@ OK
 #### SQL Injection
 
 ##### Master List
-
+```c
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+```
 ```c
 ';#---              // insert everywhere! Shoutout to xsudoxx!
 admin' or '1'='1
